@@ -33,7 +33,7 @@ public class DateSorterImpl implements DateSorter{
     static final int CONTAINS_R = 2;
     
     public DateSorterImpl() {
-        for(int i = 0; i < 12; i++) {
+        for(int i = 0; i < months.length; i++) {
             containsRMap.put(
                     (Integer)months[i][MONTH_ORDINAL],
                     (Boolean)months[i][CONTAINS_R]);
