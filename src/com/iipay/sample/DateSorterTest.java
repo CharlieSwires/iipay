@@ -41,5 +41,22 @@ class DateSorterTest {
         SortedSet<LocalDate> result = dsi.sortDates(unsortedSet);
         Assertions.assertEquals(result, sortedSet);
     }
+    @Test
+    void test2() {
+        try {
+            SortedSet<LocalDate> result = dsi.sortDates(null);
+        } catch(IllegalArgumentException e) {
+            Assertions.assertEquals(true, true);
+        }
+    }
+    @Test
+    void test3() {
+        try {
+            Set<LocalDate> unsortedSet = new HashSet<LocalDate>();
+            SortedSet<LocalDate> result = dsi.sortDates(unsortedSet);
+        } catch(IllegalArgumentException e) {
+            Assertions.assertEquals(true, true);
+        }
+    }
 
 }

@@ -49,6 +49,9 @@ public class DateSorterImpl implements DateSorter{
      */
     @Override
     public SortedSet<LocalDate> sortDates(Set<LocalDate> unsortedDates) {
+        if (unsortedDates == null ||unsortedDates.size() == 0) {
+            throw new IllegalArgumentException("Can't be null or empty");
+        }
         List<LocalDate> unsortedContainsR = new ArrayList<LocalDate>();
         List<LocalDate> unsortedNotContainsR = new ArrayList<LocalDate>();
         for (LocalDate date : unsortedDates) {
